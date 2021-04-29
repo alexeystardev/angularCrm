@@ -22,7 +22,7 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
 	  this.ds.getEmployees().subscribe(emps => {
-		  this.emps=emps=[];
+		  this.emps=emps;
 	  })
   }
 

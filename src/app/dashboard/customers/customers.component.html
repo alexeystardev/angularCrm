@@ -1,8 +1,8 @@
 <h2 class="bg-secondary text-white rounded"><i class="fas fa-user m-2"></i>Customers</h2>
-<div class="input-group col-lg-4 mb-2">
-    <input (input)="searchChanged($event.target.value)" type="text" class="form-control bg-light border small shadow" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+<div class="input-group col-lg-5 mb-2">
+    <input (input)="searchChanged($event.target.value)" type="text" class="form-control bg-light border small shadow" placeholder="Search by name, email, phone..." aria-label="Search" aria-describedby="basic-addon2">
     <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-primary" disabled type="button">
             <i class="fas fa-search fa-sm"></i>
         </button>
     </div>
@@ -11,8 +11,8 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Created: date and time</th>

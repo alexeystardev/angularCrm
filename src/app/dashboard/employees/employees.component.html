@@ -33,13 +33,15 @@
             <th scope="row">{{i+1}}</th>
             <td><i class="fa fa-user fa-lg  mr-2"></i>{{emp.fullName}}</td>
             <td>{{emp.role}}</td>
-            <td>{{emp.email}}</td>
+            <td><a href="mailto:{{emp.email}}"><i class=" fa fa-envelope fa-lg text-info mr-2" placement="top"
+					ngbTooltip="Send Email"></i></a>{{emp.email}}</td>
             <td>{{emp.bday}}</td>
             <td>
                 <li *ngFor="let emp of emp.phone">
-                    {{emp}}
+				<a href="tel:{{emp}}"><i class="mr-1 fa fa-phone fa-sm text-success" placement="top"
+						ngbTooltip="Phone Call"></i></a> {{emp}}
                 </li>
             </td>
         </tr>
 </table>
-<!-- <button class="btn btn-primary" (click)="addStaticEmp()">Push to add Static Emp</button> -->
+<button class="btn btn-primary" (click)="addStaticEmp()">Push to add Static Emp</button> 

@@ -19,17 +19,11 @@ empDoc: AngularFirestoreDocument<any>
   }
 
   getEmployees(){
-	  console.log(this.emps)
 	 return this.emps;
   }
 
   customers: Customer[] =[]
   customersStatus = new BehaviorSubject<Customer[]>([]);
-
-
-//   employees: Employees[] =[]
-//   employeesStatus = new BehaviorSubject<Employees[]>([]);
-
 
   addCustomer(customer: Customer,id:string=""){
 		let docRef
@@ -64,7 +58,6 @@ empDoc: AngularFirestoreDocument<any>
 		});
 	})
 }
-
 
   getCustomer(id:string){
     return new Promise<Customer>(async (resolve, reject) => {

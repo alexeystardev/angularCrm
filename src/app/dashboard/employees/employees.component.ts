@@ -16,9 +16,9 @@ export class EmployeesComponent implements OnInit {
   constructor(private ds:DbServiceService, private afs: AngularFirestore) { }
  
   searchStr;
-//   ngAfterContentInit(): void {
-//     this.ds.getEmployees()
-//   }
+  ngAfterContentInit(): void {
+    this.ds.getEmployees()
+  }
 
   ngOnInit(): void {
 	  this.ds.getEmployees().subscribe(emps => {
@@ -26,21 +26,21 @@ export class EmployeesComponent implements OnInit {
 	  })
   }
 
-//   addStaticEmp():void{
-// 	  // Add a second document with a generated ID.
-// 			this.afs.collection("employees").add({
-// 				fullName: "Alan Shmidth",
-// 				role: "Administrator",
-// 				email: "alan@google.com",
-// 				phone: ["0543080021"],
-// 				bday: "05/01/90"
-// 			})
-// 			.then((docRef) => {
-// 				console.log("Document written with ID: ", docRef.id);
-// 			})
-// 			.catch((error) => {
-// 				console.error("Error adding document: ", error);
-// 			});
-//   }
+  addStaticEmp():void{
+	  // Add a second document with a generated ID.
+			this.afs.collection("employees").add({
+				fullName: "Sebastian Fox",
+				role: "Help Desk",
+				email: "Sebastian@google.com",
+				phone: ["042558150"],
+				bday: "22/05/85"
+			})
+			.then((docRef) => {
+				console.log("Document written with ID: ", docRef.id);
+			})
+			.catch((error) => {
+				console.error("Error adding document: ", error);
+			});
+  }
 
 }

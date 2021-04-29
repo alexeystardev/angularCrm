@@ -36,8 +36,8 @@
             <td>{{emp.email}}</td>
             <td>{{emp.bday}}</td>
             <td>
-                <li *ngFor="emp.phone[z] of emp.phone; let z = index">
-                    {{emp.phone[z]}}
+                <li *ngFor="let emp of emp.phone">
+                    {{emp}}
                 </li>
             </td>
         </tr>

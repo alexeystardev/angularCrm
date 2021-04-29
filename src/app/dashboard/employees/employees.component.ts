@@ -16,9 +16,9 @@ export class EmployeesComponent implements OnInit {
   constructor(private ds:DbServiceService, private afs: AngularFirestore) { }
  
   searchStr;
-  ngAfterContentInit(): void {
-    this.ds.getEmployees()
-  }
+//   ngAfterContentInit(): void {
+//     this.ds.getEmployees()
+//   }
 
   ngOnInit(): void {
 	  this.ds.getEmployees().subscribe(emps => {

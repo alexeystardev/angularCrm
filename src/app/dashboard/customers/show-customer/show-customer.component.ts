@@ -19,7 +19,7 @@ export class ShowCustomerComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
-      this.id = params['id']; // (+) converts string 'id' to a number
+      this.id = params['id']; 
      
    });
    this.getCustomer(this.id)

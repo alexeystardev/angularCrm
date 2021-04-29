@@ -5,8 +5,6 @@ import { DbServiceService } from 'src/app/services/db-service.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { NgbModalConfig, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-
-
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
@@ -41,7 +39,6 @@ detailsCustomer(customer: Customer){
       const custerDetail = customer.id
 	  console.log(custerDetail)
 	   this.router.navigate([custerDetail],{ relativeTo: this.route });
-    //   this.router.navigate([custerId],{ relativeTo: this.route });
   }
 
  open(targetModal, custDetail) {
@@ -96,21 +93,5 @@ remove(content, customerDelete) {
       this.searchChanged('')
     })
   }
-
-//   remove(e,customer: Customer){
-// let askToDelete = confirm(`Delete customer ${customer.firstName +' ' + customer.lastName}?`);
-// if(askToDelete){
-//  const custerId = customer.id
-// 		 this.ds.removeCustomer(custerId)
-// 		 e.stopPropagation();
-		 
-// 		 setTimeout(() => {
-// 		   this.getAllCustomers();
-// 		 }, 1000);
-// }else {
-// 		return
-// 	 }
-// }
-	
 
 }

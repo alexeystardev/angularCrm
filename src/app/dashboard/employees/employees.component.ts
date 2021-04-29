@@ -26,21 +26,25 @@ export class EmployeesComponent implements OnInit {
 	  })
   }
 
-  addStaticEmp():void{
-	  // Add a second document with a generated ID.
-			this.afs.collection("employees").add({
-				fullName: "Sebastian Fox",
-				role: "Help Desk",
-				email: "Sebastian@google.com",
-				phone: ["042558150"],
-				bday: "22/05/85"
-			})
-			.then((docRef) => {
-				console.log("Document written with ID: ", docRef.id);
-			})
-			.catch((error) => {
-				console.error("Error adding document: ", error);
-			});
-  }
+
+
+// Just for create Employees for test
+
+//   addStaticEmp():void{
+// 	  // Add a second document with a generated ID.
+// 			this.afs.collection("employees").add({
+// 				fullName: "Sebastian Fox",
+// 				role: "Help Desk",
+// 				email: "Sebastian@google.com",
+// 				phone: ["042558150"],
+// 				bday: "22/05/85"
+// 			})
+// 			.then((docRef) => {
+// 				console.log("Document written with ID: ", docRef.id);
+// 			})
+// 			.catch((error) => {
+// 				console.error("Error adding document: ", error);
+// 			});
+//   }
 
 }

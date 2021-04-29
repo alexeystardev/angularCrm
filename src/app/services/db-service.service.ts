@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Customer } from '../models/customer.model';
 import { Employee } from '../models/employees.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -77,7 +76,6 @@ empDoc: AngularFirestoreDocument<any>
       });
     })
   }
-
 
 }
 

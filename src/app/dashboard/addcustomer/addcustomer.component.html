@@ -28,6 +28,5 @@
         <label for="inputNotes">Notes</label>
         <textarea rows="5" type="text" class="form-control" id="inputNotes" placeholder="Notes" [(ngModel)]="form.notes" name="notes"></textarea>
     </div>
-
     <button [disabled]="form.checkIfEmpty()" type="button" (click)="save()" class="btn btn-success">Save</button>
 </form>

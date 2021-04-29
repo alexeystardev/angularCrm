@@ -10,9 +10,6 @@ import { SpinnerService } from 'src/app/services/spinner.service';
   styleUrls: ['./addcustomer.component.css']
 })
 
-
-
-
 export class AddcustomerComponent implements OnInit {
    
   constructor(private ds:DbServiceService,private spinner:SpinnerService,
@@ -28,14 +25,11 @@ export class AddcustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
-     
       if (params['id']){
         this.id = params['id'];
         this.getCustomer(this.id)
       }
-  
    });
-
   }
 
   async getCustomer(id: string){

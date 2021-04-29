@@ -1,0 +1,7 @@
+.nav-link:hover{
+	background: rgba(0, 0, 0, 0.233);
+	color:rgb(251, 255, 0)!important;
+	transition: 0.5s;
+	border-top-right-radius: 50%;
+	border-bottom-left-radius: 30%;
+}

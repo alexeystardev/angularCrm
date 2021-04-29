@@ -1,19 +1,12 @@
 <h2 class="bg-secondary text-white rounded"><i class="fas fa-user-tie m-2"></i>Employees contacts</h2>
 
 <div class="input-group col-lg-5 mb-2">
-    <!-- <input (input)="searchChanged($event.target.value)" type="text" class="form-control bg-light border small shadow" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"> -->
     <input type="text" class="form-control bg-light border small shadow" placeholder="Search by name, role, email..." aria-label="Search" aria-describedby="basic-addon2" [(ngModel)]="searchStr">
     <div class="input-group-append">
         <button class="btn btn-primary" type="button">
     <i class="fas fa-search fa-sm"></i>
   </button>
     </div>
-
-    <!-- <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
-      <i class="fas fa-search fa-sm"></i>
-    </button>
-    </div> -->
 </div>
 
 <table class="table table-hover">
@@ -25,11 +18,10 @@
             <th scope="col">Email</th>
             <th scope="col">Birth Date</th>
             <th scope="col">Phone Numbers</th>
-            <!-- <th scope="col">Action</th> -->
         </tr>
     </thead>
     <tbody>
-        <tr class="pointer" *ngFor="let emp of emps | searchEmp:searchStr; let i = index" placement="left" ngbTooltip="{{emp.fullName}}">
+        <tr  class="pointer" *ngFor="let emp of emps | searchEmp:searchStr; let i = index" placement="left" ngbTooltip="{{emp.fullName}}">
             <th scope="row">{{i+1}}</th>
             <td><i class="fa fa-user fa-lg  mr-2"></i>{{emp.fullName}}</td>
             <td>{{emp.role}}</td>
@@ -44,4 +36,6 @@
             </td>
         </tr>
 </table>
-<button class="btn btn-primary" (click)="addStaticEmp()">Push to add Static Emp</button> 
+
+<!--Just for Create Employee for test-->
+<!-- <button class="btn btn-primary" (click)="addStaticEmp()">Push to add Static Emp</button>  -->  

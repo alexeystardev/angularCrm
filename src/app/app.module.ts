@@ -13,10 +13,7 @@ import { AngularFireAuthModule} from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth-guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MyformComponent } from './test/myform/myform.component';
-import { ReactMyFormComponent } from './test/react-my-form/react-my-form.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { PlayWithFirebaseComponent } from './test/play-with-firebase/play-with-firebase.component';
 import { AddcustomerComponent } from './dashboard/addcustomer/addcustomer.component';
 import { SpinnerComponent } from './main-components/alertsAndSpinners/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,28 +29,25 @@ import { SearchEmpPipe } from './pipes/search-emp.pipe';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard/customers', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'form', component: MyformComponent },
-  { path: 'reactForm', component: ReactMyFormComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
       children: [
         {
-          path: 'addCustomer', // child route path
-          component: AddcustomerComponent, // child route component that the router renders
+          path: 'addCustomer', 
+          component: AddcustomerComponent, 
         },
         {
           path: 'customers',
-          component: CustomersComponent, // another child route component that the router renders
+          component: CustomersComponent, 
         },
         {
           path: 'customers/:id',
-          component: AddcustomerComponent, // another child route component that the router renders
+          component: AddcustomerComponent,
         },
         {
           path: 'employees',
-          component: EmployeesComponent, // another child route component that the router renders
+          component: EmployeesComponent,
         },
-      ], },
-  { path: 'playFB', component: PlayWithFirebaseComponent,canActivate: [AuthGuard] }
+      ]},
 ];
 
 @NgModule({
@@ -64,9 +58,6 @@ const routes: Routes = [
     SideBarComponent,
     LoginComponent,
     DashboardComponent,
-    MyformComponent,
-    ReactMyFormComponent,
-    PlayWithFirebaseComponent,
     AddcustomerComponent,
     SpinnerComponent,
     CustomersComponent,

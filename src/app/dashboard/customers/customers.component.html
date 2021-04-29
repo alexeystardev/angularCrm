@@ -1,5 +1,4 @@
 <h2 class="bg-secondary text-white rounded"><i class="fas fa-user m-2"></i>Customers</h2>
-
 <div class="input-group col-lg-4 mb-2">
     <input (input)="searchChanged($event.target.value)" type="text" class="form-control bg-light border small shadow" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
     <div class="input-group-append">
@@ -8,7 +7,6 @@
         </button>
     </div>
 </div>
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -38,7 +36,6 @@
                 <i (click)="remove(del,item) " class="fa fa-user-times fa-lg text-danger " placement="top" ngbTooltip="Delete Customer"></i>
             </td>
         </tr>
-
 </table>
 
 <ng-template #del let-c="close" let-d="dismiss">
@@ -57,7 +54,6 @@
     </div>
 </ng-template>
 
-
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Customer Details</h4>
@@ -66,7 +62,6 @@
     </button>
     </div>
     <div class="modal-body">
-
         <div class="container">
             <div class="row">
                 <div class="col-md-4 img">
@@ -97,30 +92,6 @@
 
             </div>
         </div>
-
-
-        <!-- <th scope="row"></th>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.phoneNumber}}</td>
-            <td>{{user.timestamp | timeStampToDateWithTime}}</td> -->
-        <!-- <div class="container">
-            <div class="row"> -->
-        <!-- <div class="col-md-6 img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzOpl3-kqfNbPcA_u_qEZcSuvu5Je4Ce_FkTMMjxhB-J1wWin-Q" alt="" class="img-rounded">
-                </div> -->
-        <!-- <div>
-            <i class="fa fa-user fa-5x mx-4 mt-5"></i>
-        </div>
-        <div class="col-md-6 details">
-            <span><span class="text-primary">First name: </span>{{user.firstName}}</span>
-            <span><span class="text-primary">Last name: </span>{{user.lastName}}</span>
-            <h5>Created: date and time</h5>
-            <span>{{user.timestamp | timeStampToDateWithTime}}</span>
-        </div>
-    </div>
-    </div>-->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>

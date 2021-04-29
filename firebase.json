@@ -1,0 +1,9 @@
+{
+    "hosting": {
+        "public": "dist/companyCrm",
+        "rewrites": [{
+            "source": "**",
+            "destination": "/index.html"
+        }]
+    }
+}

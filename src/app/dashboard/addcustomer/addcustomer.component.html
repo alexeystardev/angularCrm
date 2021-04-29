@@ -1,0 +1,33 @@
+<h2 class="bg-secondary text-white rounded"><i class="{{icon}} m-2"></i>{{addOrEditCustomer}}</h2>
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First name" [(ngModel)]="form.firstName" name="firstName">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last name" [(ngModel)]="form.lastName" name="lastName">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="form.email" name="email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" [(ngModel)]="form.phoneNumber" name="phoneNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <textarea type="text" class="form-control" id="inputAddress" placeholder="Address" [(ngModel)]="form.address" name="address"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputNotes">Notes</label>
+        <textarea rows="5" type="text" class="form-control" id="inputNotes" placeholder="Notes" [(ngModel)]="form.notes" name="notes"></textarea>
+    </div>
+
+    <button [disabled]="form.checkIfEmpty()" type="button" (click)="save()" class="btn btn-success">Save</button>
+</form>

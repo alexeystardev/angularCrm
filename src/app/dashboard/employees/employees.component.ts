@@ -22,25 +22,25 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
 	  this.ds.getEmployees().subscribe(emps => {
-		  this.emps = emps;
+		  this.emps=emps=[];
 	  })
   }
 
-  addStaticEmp():void{
-	  // Add a second document with a generated ID.
-			this.afs.collection("employees").add({
-				fullName: "Alan Shmidth",
-				role: "Administrator",
-				email: "alan@google.com",
-				phone: ["0543080021"],
-				bday: "05/01/90"
-			})
-			.then((docRef) => {
-				console.log("Document written with ID: ", docRef.id);
-			})
-			.catch((error) => {
-				console.error("Error adding document: ", error);
-			});
-  }
+//   addStaticEmp():void{
+// 	  // Add a second document with a generated ID.
+// 			this.afs.collection("employees").add({
+// 				fullName: "Alan Shmidth",
+// 				role: "Administrator",
+// 				email: "alan@google.com",
+// 				phone: ["0543080021"],
+// 				bday: "05/01/90"
+// 			})
+// 			.then((docRef) => {
+// 				console.log("Document written with ID: ", docRef.id);
+// 			})
+// 			.catch((error) => {
+// 				console.error("Error adding document: ", error);
+// 			});
+//   }
 
 }

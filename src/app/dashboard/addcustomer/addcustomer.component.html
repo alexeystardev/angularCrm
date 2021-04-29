@@ -1,4 +1,4 @@
-<h2 class="bg-secondary text-white rounded"><i class="{{icon}} m-2"></i>{{addOrEditCustomer}}</h2>
+<h2 class="bg-secondary text-white rounded shadow"><i class="{{icon}} m-2"></i>{{addOrEditCustomer}}</h2>
 <form>
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -29,4 +29,5 @@
         <textarea rows="5" type="text" class="form-control" id="inputNotes" placeholder="Notes" [(ngModel)]="form.notes" name="notes"></textarea>
     </div>
     <button [disabled]="form.checkIfEmpty()" type="button" (click)="save()" class="btn btn-success">Save</button>
+	<a class="btn btn-secondary ml-4" href="javascript:history.back()">Back</a>
 </form>

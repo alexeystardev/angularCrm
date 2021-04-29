@@ -24,11 +24,11 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" ngbDropdownMenu aria-labelledby="userDropdown">
                 <a class="dropdown-item">
-                    <i class="fas fa-cog fa-fw mr-2 text-gray-400"></i><del>My Preferences</del>
+                    <i class="fas fa-cog fa-lg mr-2 text-gray-400"></i><del>My Preferences</del>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a (click)="logOut()" class="dropdown-item pointer" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-fw mr-2 text-danger"></i> Logout
+                <a (click)="logOut()" class="dropdown-item pointer logout"  placement="bottom" ngbTooltip="LogOut"data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-lg mr-2 text-danger"></i> <strong>Logout</strong>
                 </a>
             </div>
         </li>

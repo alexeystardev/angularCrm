@@ -1,7 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SpinnerService } from './spinner.service';
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +57,8 @@ export class LoginService {
     return ''
   }
 
-  logOut(){
-    this.auth.signOut()
+	logOut(){	  
+		window.location.reload();
+		this.auth.signOut()
   }
 }

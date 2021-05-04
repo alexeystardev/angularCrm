@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpinnerService } from './spinner.service';
@@ -10,7 +10,7 @@ export class LoginService {
 
   constructor(public readonly auth: AngularFireAuth,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router, private zone: NgZone) { }
 
   user:any=null
 
@@ -26,17 +26,7 @@ export class LoginService {
         var errorMessage = error.message;
         reject(errorMessage)
       });
-
-      // try {
-      //   const user=await this.auth.signInWithEmailAndPassword(email, password)
-      // } catch (error) {
-      //   var errorMessage = error.message;
-      //   reject(errorMessage)
-      // }
-
-
     })
-   
   }
 
   checkIfUserLogin():Promise<boolean>{
@@ -52,29 +42,14 @@ export class LoginService {
                 resolve(true)
               } else {
                 this.user=null
+				  this.zone.run(() => {
                 this.router.navigate(['login'], { relativeTo: this.route });
+				  });
                 resolve(false)
               }
             });
     })
-    
-
-    
-    
   }
-
-  // checkIfUserLoginV2(){
-  //   var user = this.auth.currentUser;
-
-  //   if (user) {
-  //     console.log(user)
-  //   } else {
-  //     // No user is signed in.
-  //     console.log("No user")
-  //   }
-
-  // }
-
 
   getUserEmail(){
     if ( this.user && this.user.email){

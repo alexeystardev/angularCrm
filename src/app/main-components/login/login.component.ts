@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SpinnerService } from 'src/app/services/spinner.service';
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 		//   checkbox: new FormControl(false, Validators.requiredTrue)
 	  })
   }
+
   check:boolean =true;
   errorMessage=''
 

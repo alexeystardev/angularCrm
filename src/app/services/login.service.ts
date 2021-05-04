@@ -10,18 +10,16 @@ export class LoginService {
 
   constructor(public readonly auth: AngularFireAuth,
     private route: ActivatedRoute,
-    private router: Router, private spinner:SpinnerService) { }
+    private router: Router) { }
 
   user:any=null
 
   loginWithEmailPassword(email: string, password: string){
 
     return new Promise(async (resolve, reject) => {
-	this.spinner.showOrHideSpinner(true)
       this.auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         this.router.navigate(['dashboard/customers'], { relativeTo: this.route });
-		this.spinner.showOrHideSpinner(false)
       })
       .catch((error) => {
         var errorCode = error.code;

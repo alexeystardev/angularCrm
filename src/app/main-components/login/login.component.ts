@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
 	form: FormGroup
 
-  constructor(private loginServ:LoginService) { }
+  constructor(private loginServ:LoginService, private spinner: SpinnerService) { }
 
   ngOnInit(): void {
 	   this.form = new FormGroup({
@@ -25,8 +26,10 @@ export class LoginComponent implements OnInit {
 
 
   login(email: string, password: string){
+	  this.spinner.showOrHideSpinner(true)
     this.loginServ.loginWithEmailPassword(email,password).catch((err)=>{
       this.errorMessage=err
+		this.spinner.showOrHideSpinner(false)
     })
   }
 

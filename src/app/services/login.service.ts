@@ -49,7 +49,7 @@ export class LoginService {
             }
             this.auth.onAuthStateChanged((user) => {
               if (user) {
-                console.log(user)
+                // console.log(user)
                 this.user=user
                 resolve(true)
               } else {

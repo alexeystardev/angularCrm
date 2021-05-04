@@ -60,6 +60,7 @@ export class Customer {
         }
         return false
     }
+
     fromFirestore(doc):Customer{
         return new Customer(doc.id,
             doc.data().firstName,

@@ -58,7 +58,7 @@ export class LoginService {
   }
 
 	logOut(){	  
-		window.location.reload();
 		this.auth.signOut()
+		window.location.reload();
   }
 }

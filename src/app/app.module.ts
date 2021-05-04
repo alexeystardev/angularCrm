@@ -24,6 +24,7 @@ import { TimeStampToDatePipe } from './pipes/time-stamp-to-date.pipe';
 import { TimeStampToDateWithTimePipe } from './pipes/time-stamp-to-date-with-time.pipe';
 import { EmployeesComponent } from './dashboard/employees/employees.component';
 import { SearchEmpPipe } from './pipes/search-emp.pipe';
+import { Page404Component } from './main-components/page404/page404.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
           component: EmployeesComponent,
         },
       ]},
+	{ path: '**', component: Page404Component }
 ];
 
 @NgModule({
@@ -65,7 +67,8 @@ const routes: Routes = [
     TimeStampToDatePipe,
     TimeStampToDateWithTimePipe,
     EmployeesComponent,
-    SearchEmpPipe
+    SearchEmpPipe,
+    Page404Component
   ],
   imports: [
     BrowserModule,
